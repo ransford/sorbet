@@ -18,7 +18,8 @@ string methodSignatureString(const core::GlobalState &gs, const core::TypePtr &r
             if (!contents.empty()) {
                 contents += " ";
             }
-            contents += methodDetail(gs, dispatchComponent.method, dispatchComponent.receiver, retType, constraint);
+            contents +=
+                methodDetail(gs, dispatchComponent.method, dispatchComponent.receiver, retType, constraint.get());
         }
         start = start->secondary.get();
     }
